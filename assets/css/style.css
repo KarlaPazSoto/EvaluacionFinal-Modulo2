@@ -1,0 +1,305 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+menu{
+    grid-area: menu;
+}
+
+header{
+    grid-area: header;
+}
+
+main{
+    grid-area: main;
+
+}
+
+section{
+    grid-area: section;
+}
+
+footer{
+    grid-area: footer;
+}
+
+.gridContainer{
+    display: grid;
+    grid-template-areas: 
+    "menu header"
+    "menu main"
+    "menu section"
+    "menu footer"
+    ;
+    grid-template-columns: 20% auto;
+    grid-template-rows: auto auto auto auto;
+    background-color: #232323;
+}
+
+/* Esilos Menu */
+
+.menuContainer{
+    background-color: #000000;
+    color: white;
+    height: 100%;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+}
+
+.container-fluid{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    line-height: 3rem;
+}
+
+.navbar-brand {
+    color: white;
+    font-family: "Satisfy", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.navbar-brand:hover {
+    color: gray;
+}
+
+.nav-link:hover{
+    color: gray;
+}
+
+.container-fluid a img{
+    width: 50%;
+}
+
+/* Estilos Header */
+
+
+.headerContainer{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    background-color: #1A1A1A;
+    color: white;
+    padding: 3% 0;
+}
+
+.satisfy-regular {
+    font-family: "Satisfy", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 8rem;
+  }
+  
+.headerContainer p{
+    margin: 0;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+    font-size: 1.5rem;
+}
+
+/* Estilos Main */
+
+.grilla{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    padding: 0 10%;
+}
+
+.foto{
+    margin: 5%;
+    filter: grayscale(100%);
+    transition: all .3s linear;
+}
+
+.foto:hover{
+    filter: grayscale(0%);
+}
+
+.foto img{
+    width: 100%;
+}
+
+.grilla a{
+    text-decoration: none;
+    text-align: end;
+    color: white;
+    padding: 3% 0;
+}
+
+/* Estilos section */
+
+.sectionContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    width: 100%;
+    background-color: #323232;
+    line-height: 6rem;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+    font-size: 1.5rem;
+    padding: 5%0;
+}
+
+.correo .insta .fb{
+    display: flex;
+}
+
+.correo:hover{
+    color: gray;
+}
+
+.insta:hover{
+    color: gray;
+}
+
+.fb:hover{
+    color: gray;
+}
+
+.sectionContainer a{
+    color: white;
+}
+
+/* Estilos Footer */
+
+.footerContainer{
+    background-color: #1A1A1A;
+    color: white;
+    text-align: center;
+}
+
+.footerContainer p{
+    margin: 0;
+    padding: 5% 0;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+    font-size: 1.5rem;
+}
+
+/* Keyframes Main (galeria) */
+
+@keyframes mostrar {
+    from{
+        opacity: 0;
+        scale: 25%;
+    }
+
+    to{
+        opacity: 1;
+        scale: 100%;
+    }
+}
+
+.foto img{
+    view-timeline-name: --fotos;
+    view-timeline-axis: block;
+
+    animation-timeline: --fotos;
+    animation-name: mostrar;
+
+    animation-range: entry 40% cover 50%;
+    animation-fill-mode: both;
+}
+
+
+/* Media queri para dispositivos pequeños */
+
+@media (max-width:575px){
+    .gridContainer{
+        display: grid;
+        grid-template-areas: 
+        "menu"
+        "header"
+        "main"
+        "section"
+        "footer"
+        ;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(5,auto);
+    }
+
+    .headerContainer{
+        height: 100%;
+    }
+
+    .satisfy-regular{
+        font-size: 5rem;
+    }
+
+    .grilla{
+        grid-template-columns: 1fr;
+    }
+
+    .hamburguesa{
+        display: flex;
+        flex-direction: column;
+        color: white;
+    }
+}
+
+
+/* media queri para dispositivios medianos */
+
+@media (max-width:768px){
+
+    .gridContainer{
+        display: grid;
+        grid-template-areas: 
+        "menu"
+        "header"
+        "main"
+        "section"
+        "footer"
+        ;
+        grid-template-columns: auto;
+        grid-template-rows: repeat(5,auto);
+    }
+
+    .navbar-brand{
+        width: 50%;
+    }
+
+    .satisfy-regular{
+        font-size: 7rem;
+    }
+
+    .container-fluid{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
+    .hamburguesa{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-around;
+    }
+
+    .grilla{
+        grid-template-columns: repeat(2,auto);
+    }
+
+    .hContainer{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }    
+}
+
+
+
+
+

@@ -288,10 +288,6 @@ footer{
         justify-content: space-around;
     }
 
-    .grilla{
-        grid-template-columns: repeat(2,auto);
-    }
-
     .hContainer{
         display: flex;
         flex-direction: column;
